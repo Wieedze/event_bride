@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de l'Événement</title>
+    <!-- Lien vers le CDN de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .event-header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+        .event-details {
+            background-color: #f8f9fa;
+            border-radius: 0 0 10px 10px;
+            padding: 20px;
+        }
+        .price-tag {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .location-tag {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+        .description {
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <!-- Card for Event -->
+        <div class="card">
+            <div class="event-header">
+                <h2>{{ title }}</h2>
+                <p>{{ start_date }} - {{ duration }} heures</p>
+            </div>
+
+            <div class="event-details">
+                <p class="price-tag">Prix : {{ price }}€</p>
+                <p class="location-tag">Lieu : {{ location }}</p>
+                <div class="description">
+                    <h4>Description :</h4>
+                    <p>{{ description }}</p>
+                </div>
+
+                <!-- Optionally, you can add a button to interact -->
+                <a href="#" class="btn btn-primary mt-4">Réserver maintenant</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lien vers le CDN de Bootstrap JS et Popper.js pour certains composants -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
