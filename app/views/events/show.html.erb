@@ -40,20 +40,32 @@
         <!-- Card for Event -->
         <div class="card">
             <div class="event-header">
-                <h2>{{ title }}</h2>
-                <p>{{ start_date }} - {{ duration }} heures</p>
+                <h2><%= @event.title %></h2>
+                <p><%= @event.start_date&.strftime("%d/%m/%Y %H:%M") %> - <%= @event.duration %> minutes</p>
             </div>
 
             <div class="event-details">
-                <p class="price-tag">Prix : {{ price }}€</p>
-                <p class="location-tag">Lieu : {{ location }}</p>
+                <p class="price-tag">Prix : <%= @event.price %>€</p>
+                <p class="location-tag">Lieu : <%= @event.location %></p>
+                <p class="location-tag">Participanpan : <%= @event.attendances.count %></p>
                 <div class="description">
                     <h4>Description :</h4>
-                    <p>{{ description }}</p>
+                    <p><%= @event.description %></p>
                 </div>
 
-                <!-- Optionally, you can add a button to interact -->
-                <a href="#" class="btn btn-primary mt-4">Réserver maintenant</a>
+                <%= button_to "Réserver maintenant", attendances_path, method: :post, params: { attendance: { event_id: @event.id, user_id: @user.id } }, class: "btn btn-primary mt-4" %>
+                <% if flash[:notice] %>
+                <div class="alert alert-success" role="alert">
+                    <%= flash[:notice] %>
+                </div>
+                <% end %>
+
+                <% if flash[:alert] %>
+                <div class="alert alert-danger" role="alert">
+                    <%= flash[:alert] %>
+                </div>
+                <% end %>
+                
             </div>
         </div>
     </div>

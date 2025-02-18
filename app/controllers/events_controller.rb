@@ -10,14 +10,23 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event.new(event_params)
+    @event = Event.create(event_params)
     @event.user = current_user
     if @event.save
       flash[:success] = "Event enregistré avec succès !"
       redirect_to @event
     else
-      render :event, status: :unprocessable_entity
+      p @event.errors.full_messages
     end
+  end
+  def show
+    @event = Event.find_by(id: params[:id])
+  end
+
+  private 
+
+  def event_params
+    params.require(:event).permit(:user_id, :title, :description, :location, :price, :start_date, :duration)
   end
 
 end
