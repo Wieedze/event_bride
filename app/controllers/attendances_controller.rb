@@ -1,37 +1,34 @@
 class AttendancesController < ApplicationController
-
-  def new 
+  def new
     @attendance = Attendance.new
   end
 
-  def create 
+  def create
+    @event = Event.find_by(id: params[:event_id])
     @attendance = Attendance.new(attendances_params)
     @attendance.user = current_user
-    if @attendance.save 
-      p 'you are goin to partyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
+    if @attendance.save
+      p "you are goin to partyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
       flash[:notice] = "Reservation créé !"
-    else 
+    else
       p @attendance.errors.full_messages
     end
   end
 
   def index
-    
+    @event = Event.find_by(id: params[:event_id])
+    @attendees = @event.attendances.includes(:user).map(&:user)
   end
 
-  def destroy 
-    
+  def destroy
   end
 
-  def update 
-    
+  def update
   end
 
-  private 
+  private
 
   def attendances_params
     params.require(:attendance).permit(:user_id, :event_id)
-    
   end
-
 end

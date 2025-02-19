@@ -1,7 +1,8 @@
 class Event < ApplicationRecord
   belongs_to :user
-  has_many :attendances 
-  
+  has_many :attendances
+  has_many :attendees, through: :attendances, source: :user
+
   validates :start_date, presence: true, on: :create
   validates :title, presence: true, length: {minimum: 5 ,maximum: 140}
   validates :description, presence: true, length: {minimum: 20 ,maximum: 2000}

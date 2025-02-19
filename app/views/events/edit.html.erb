@@ -1,0 +1,36 @@
+<h1>Éditer l'événement</h1>
+
+<%= form_with(model: @event, url: event_path(@event), method: :patch, local: true) do |f| %>
+    <div class="form-group">
+        <label>Titre</label>
+        <%= f.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <label>Contenu de l'événement</label>
+        <%= f.text_area :description, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <label>Lieu</label>
+        <%= f.text_field :location, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <label>Prix</label>
+        <%= f.text_field :price, class: 'form-control' %>
+    </div>
+
+    <div class="form-group mt-3">
+        <%= f.submit "Modifier l'événement", class: "btn btn-primary" %>
+    </div>
+<% end %>
+
+<!-- Formulaire de suppression -->
+<%= form_with(url: event_path(@event), method: :delete, local: true) do %>
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet événement ?')">Supprimer l'événement</button>
+    </div>
+<% end %>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

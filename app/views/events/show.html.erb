@@ -52,19 +52,13 @@
                     <h4>Description :</h4>
                     <p><%= @event.description %></p>
                 </div>
-
-                <%= button_to "Réserver maintenant", attendances_path, method: :post, params: { attendance: { event_id: @event.id, user_id: @user.id } }, class: "btn btn-primary mt-4" %>
-                <% if flash[:notice] %>
-                <div class="alert alert-success" role="alert">
-                    <%= flash[:notice] %>
-                </div>
+                    <% if @user.id != @event.user_id %>
+                <%= button_to "Passer commande (NEXT GEN)", checkout_create_path(total: @event.price, event_id: @event.id), class: "btn btn-primary", data: { turbo: false } %>
+                    <%end%>
+                    <% if @user.id == @event.user_id %>
+                    <%= link_to "Mon Espace Evenement", event_attendances_path(@event.id), class: "btn btn-secondary" %>
                 <% end %>
-
-                <% if flash[:alert] %>
-                <div class="alert alert-danger" role="alert">
-                    <%= flash[:alert] %>
-                </div>
-                <% end %>
+            </div>
                 
             </div>
         </div>
