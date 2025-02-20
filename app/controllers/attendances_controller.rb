@@ -17,7 +17,7 @@ class AttendancesController < ApplicationController
 
   def index
     @event = Event.find_by(id: params[:event_id])
-    @attendees = @event.attendances.includes(:user).map(&:user)
+    @attendees = @event.attendances
   end
 
   def destroy

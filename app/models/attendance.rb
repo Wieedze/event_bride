@@ -8,6 +8,4 @@ class Attendance < ApplicationRecord
   def attendance_participation_send
     UserMailer.attendance_participation_email(self).deliver_now
   end
-  
 end
-

@@ -14,5 +14,5 @@
             <%= flash[:alert] %>
         </div>
     <% end %>
-    <%= button_to "Participer à l'événement", event_attendances_path[:event_id], method: :post, params: { attendance: { event_id: @event.id, user_id: current_user.id } }, class: "btn btn-primary" %>
-</div>
+    <%# <%= button_to "Participer à l'événement", event_attendances_path[:event_id], method: :post, params: { attendance: { event_id: @event.id, user_id: current_user.id } }, class: "btn btn-primary" %>
+</div> 

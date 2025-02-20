@@ -26,8 +26,8 @@
         <% @attendees.each_with_index do |attendance, index| %>
           <tr>
             <th scope="row"><%= index + 1 %></th>
-            <td><%= attendance.user.name %></td>
-            <td><%= attendance.user.email %></td>
+            <td><%= attendance.user.first_name %></td>
+            <td><%= attendance.user.email_address %></td>
             <td><%= attendance.created_at.strftime("%d/%m/%Y") %></td>
           </tr>
         <% end %>

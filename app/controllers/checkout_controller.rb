@@ -31,12 +31,16 @@ class CheckoutController < ApplicationController
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
     @event_id = @session.metadata.event_id
 
-
     if @payment_intent.status == "succeeded"
-      @attendance = Attendance.create(user_id: current_user.id, event_id: current_event)
-      @attendance.user = current_user
-      @attendance.event_id = @event_id
+
+      @attendance = Attendance.create(user_id: current_user.id, event_id: @event_id)
+      # @attendance.user = current_user
+      # @attendance.event_id = @event_id
       flash[:notice] = "you are going to party"
+      puts current_user.id
+      puts @event_id
+      puts @attendance
+      puts "#"*60
     else
       flash[:alert] = "la reservation ne cest pas faite . Essayez à nouveau."
 
