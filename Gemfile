@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 gem "faker"
 gem "table_print"
-gem "stripe", "~>13.4.0"
+gem "stripe", "~>15.0.0"
 gem "dotenv"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.1"
