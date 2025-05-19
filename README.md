@@ -1,64 +1,75 @@
-🎟️ EventBookingApp
-EventBookingApp is a full-stack web application built with Ruby on Rails, designed to facilitate event reservations. Users can create accounts, browse events, make reservations, leave comments, reply to others, and rate events. The frontend utilizes Bootstrap for a clean and responsive user interface.
+---
+marp: true
+theme: default
+paginate: true
+---
 
-✨ Features
-User Authentication: Secure sign-up and login functionalities.
+# 🎟️ EventBookingApp
 
-Event Browsing: View a list of available events with detailed information.
+A full-stack event reservation platform built with Ruby on Rails.
 
-Reservations: Reserve spots for desired events.
+---
 
-Commenting System: Leave comments on events and reply to existing comments.
+## ✨ Features
 
-Rating Mechanism: Rate events, with average ratings displayed on event pages.
+- **User Authentication**: Secure sign-up and login functionalities.
+- **Event Browsing**: View a list of available events with detailed information.
+- **Reservations**: Reserve spots for desired events.
+- **Commenting System**: Leave comments on events and reply to existing comments.
+- **Rating Mechanism**: Rate events, with average ratings displayed on event pages.
+- **Responsive Design**: Clean and responsive UI using Bootstrap.
 
-Responsive Design: Clean and responsive UI using Bootstrap.
+---
 
-🛠️ Technologies Used
-Backend: Ruby on Rails
+## 🛠️ Technologies Used
 
-Frontend: Bootstrap
+- **Backend**: Ruby on Rails
+- **Frontend**: Bootstrap
+- **Database**: SQLite (for development)
 
-Database: SQLite (for development)
+---
 
-🚀 Getting Started
-Prerequisites
-Ruby and Rails installed on your machine.
+## 🚀 Getting Started
 
-Installation
-Clone the repository:
+### Prerequisites
+
+- Ruby and Rails installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/EventBookingApp.git
+   cd EventBookingApp
+
 
 bash
-Copy
-Edit
+Copier
+Modifier
 git clone https://github.com/yourusername/EventBookingApp.git
 cd EventBookingApp
 Install dependencies:
-GitHub
-+6
-palplanner.com
-+6
-GitHub
-+6
 
 bash
-Copy
-Edit
+Copier
+Modifier
 bundle install
 Set up the database:
 
 bash
-Copy
-Edit
+Copier
+Modifier
 rails db:create
 rails db:migrate
 Start the server:
 
 bash
-Copy
-Edit
+Copier
+Modifier
 rails server
-Visit http://localhost:3000 in your browser to use the application.
+Access the application:
+
+Open your browser and navigate to http://localhost:3000 to use the application.
 
 📂 Project Structure
 app/models – Contains the application's models.
@@ -68,4 +79,3 @@ app/controllers – Contains the controllers handling requests.
 app/views – Contains the views rendered to the user.
 
 config/routes.rb – Defines the application's routes.
-
