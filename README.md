@@ -23,44 +23,55 @@ A full-stack event reservation platform built with Ruby on Rails.
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Ruby and Rails installed on your machine.
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/EventBookingApp.git
-   cd EventBookingApp
-Install dependencies:
+🚀 Getting Started
+Install Dependencies
+Ensure you have Bundler installed. Then, install the required gems:
+bundler.io
++2
+kolosek.com
++2
+DZone
++2
+TutorialsPoint
 
 bash
-Copier
-Modifier
+Copy
+Edit
 bundle install
-Set up the database:
+Set Up the Database
+Create and migrate the database:
 
 bash
-Copier
-Modifier
+Copy
+Edit
 rails db:create
 rails db:migrate
-Start the server:
+Start the Server
+Launch the Rails development server:
+Ruby on Rails Guides
++3
+Ruby on Rails Guides
++3
+Bacancy
++3
 
 bash
-Copier
-Modifier
+Copy
+Edit
 rails server
-Visit http://localhost:3000 in your browser to use the application.
+Once the server is running, open your browser and navigate to:
 
+arduino
+Copy
+Edit
+
+http://localhost:3000
 📂 Project Structure
-app/models - Contains the application's models.
+app/models – Contains the application's models.
 
-app/controllers - Contains the controllers handling requests.
+app/controllers – Contains the controllers handling requests.
 
-app/views - Contains the views rendered to the user.
+app/views – Contains the views rendered to the user.
 
-config/routes.rb - Defines the application's routes.
+config/routes.rb – Defines the application's routes.
+
