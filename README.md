@@ -1,9 +1,3 @@
----
-marp: true
-theme: default
-paginate: true
----
-
 # 🎟️ EventBookingApp
 
 A full-stack event reservation platform built with Ruby on Rails.
